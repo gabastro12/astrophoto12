@@ -1,6 +1,12 @@
 .Wiki {
   font-size: 80%;
 }
+h3{
+  font: italic 1em "Helvetica";
+}
+h2{
+  font: bold 1.5em "Helvetica";
+}
 
 
 .jumbotron {
