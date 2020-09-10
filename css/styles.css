@@ -1,11 +1,24 @@
 .Wiki {
   font-size: 80%;
 }
-h3{
+
+nom {
+  color: blue;
+
+}
+
+h3 {
   font: italic 1em "Helvetica";
 }
-h2{
+
+h2 {
   font: bold 1.5em "Helvetica";
+}
+
+.nav-link-astrobin {
+  font-size: 70%;
+  color: rgb(240, 198, 12);
+  background-color: rgb(60, 9, 247);
 }
 
 
@@ -15,6 +28,7 @@ h2{
   margin-bottom: 0;
   background-color: #fff;
 }
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
