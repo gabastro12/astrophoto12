@@ -1,10 +1,22 @@
+.album py-5 bg-light {
+  background: #000;
+}
+
+.container-fluid {
+  padding-top: 3rem;
+  background: rgb(182, 179, 179);
+}
+
 .Wiki {
   font-size: 80%;
 }
 
+.card-asi {
+  background: rgb(185, 201, 236);
+}
+
 nom {
   color: blue;
-
 }
 
 h3 {
