@@ -31,6 +31,7 @@ button {
 .element img {
   width: 100%; /* Assurez-vous que l'image occupe tout l'espace de la vignette */
   height: auto; /* Pour conserver le ratio hauteur/largeur de l'image */
+  background-color: rgb(67, 103, 133);
 }
 
 /* Styles pour le texte (M1, M2, etc.) sous l'image */
