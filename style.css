@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+:root {
+  --background-color: #efe7e5;
+  --text-color: black;
+}
+
+body {
+  margin: 3% 15%;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+p {
+  line-height: 25px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  list-style-type: none;
+  font-weight: 500;
+}
+nav li {
+  position: relative;
+  margin-left: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+nav li span {
+  position: absolute;
+  top: -5px;
+  right: -28px;
+}
+
+header {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+header .header-left {
+  flex: 6;
+  margin-right: 50px;
+}
+header .header-left small {
+  font-weight: bold;
+  display:flex;
+  align-items:center;
+}
+header .header-left h1 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top:15px;
+}
+header .header-left .links {
+  margin-top: 80px;
+}
+header .header-left .links a {
+  text-decoration:none;
+  color:inherit;
+  position: relative;
+  margin-right: 40px;
+  font-weight: bold;
+}
+header .header-left .links a span {
+  position: absolute;
+  top: -5px;
+  right: -28px;
+}
+header .header-right {
+  flex: 5;
+}
+header .header-right img {
+  width: 100%;
+  border-radius: 25% 10% 0% 0%;
+}
+
+.about {
+  margin-top: 150px;
+}
+
+.about p {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.images {
+  margin-top: 60px;
+}
+.images .image-card {
+  display:flex;
+  align-items:center;
+  margin-bottom: 60px;
+}
+.images .image-card .image-left {
+  margin-right: 40px;
+}
+.images .image-card .image-left img {
+  height: 300px;
+  width: 400px;
+}
+
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 100px;
+}
+footer p {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 880px) {
+  .images .image-card {
+    flex-wrap:wrap;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  header {
+    flex-direction: column-reverse
+  }
+  header .header-left {
+    margin-right: 0;
+  }
+  header .header-right {
+    margin-bottom: 40px;
+  }
+  header .header-right img {
+    width: 250px;
+  }
+
+  .images .image-card .image-left img {
+    width: 100%;
+  }
+}
