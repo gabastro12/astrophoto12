@@ -11,12 +11,6 @@ function afficherImage(imageSrc, nomObjet, constellation, saison, difficulté) {
   const constellationElement = document.getElementById('constellation');
   constellationElement.textContent = 'Constellation : ' + constellation;
 
-  const saisonElement = document.getElementById('saison');
-  saisonElement.textContent = 'Saison : ' + saison;
-
-  const difficultéElement = document.getElementById('difficulté');
-  difficultéElement.textContent = 'Difficulté : ' + difficulté;
-
   const imageGrande = document.getElementById('image-grande');
   imageGrande.style.display = 'flex';
 }
