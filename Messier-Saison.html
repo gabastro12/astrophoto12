@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesSaison.css">
+  <script src="donnees-saison.js"></script> <!-- Ajout du fichier JavaScript -->
+  <title>Tableau Saisons</title>
+</head>
+<body>
+
+<h1 style="margin-left: 50px;">Messier en ordre des saisons</h1>
+
+  <span class="green">printemps</span>
+  <span class="red"> été</span>
+  <span class="orange"> automne</span>
+  <span class="blue"> hivers</span>
+
+<p></p>
+
+  <div class="tableau-periodique">
+    <!-- Génération des éléments à partir des données -->
+    <script>
+  // Mapping des saisons vers les couleurs en français
+  const saisonCouleurMap = {
+    printemps: 'green',
+    été: 'red',
+    automne: 'orange',
+    hiver: 'blue'
+  };
+
+  for (const objet of objetsMessier) {
+    const nomFichierAvecExtension = objet.image.split('/').pop(); // Obtenez le nom du fichier avec extension
+    const nomFichierSansExtension = nomFichierAvecExtension.split('-')[0]; // Enlevez l'extension
+    const nomApostropheEchappe = objet.nom.replace('\'', '\\\''); // Échapper les apostrophes
+    const couleur = saisonCouleurMap[objet.saison.toLowerCase()] || 'black'; // Couleur par défaut si la saison n'est pas reconnue
+
+    // Afficher le nom de la saison dans la console
+
+    document.write(`
+      <div class="element" onclick="afficherImage('${objet.image}', '${nomApostropheEchappe}', '${objet.constellation}', '${objet.saison}', '${objet.difficulté}')" style="color: ${couleur}">
+      <img src="${objet.image}" alt="${objet.nom}">${nomFichierSansExtension}
+      </div>
+      `);
+
+  }
+</script>
+
+
+
+  </div>
+
+  <!-- Affichage de l'M en grand -->
+  <div id="image-grande" class="image-grande" onclick="cacherImage()">
+    <div class="conteneur-image">
+      <img id="image-affichee" src="demarrage.png" alt="M de l'objet Messier">
+      <div id="infos-image" class="infos-image">
+        <div id="nom-objet" class="nom-objet"></div>
+        <div id="constellation" class="constellation"></div>
+        <div id="saison" class="saison"></div>
+        <div id="difficulté" class="difficulté"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="appSaison.js"></script>
+</body>
+</html>
