@@ -8,28 +8,46 @@
   <title>Messier_Num</title>
 </head>
 <body>
+  <h1 style="margin-left: 50px;">Messier en ordre croissant</h1>
+    <p></p>
+  <div id="resultat"></div> <!-- Ajout de la div pour afficher le résultat -->
   <div class="tableau-periodique">
     <!-- Génération des éléments à partir des données -->
     <script>
-  for (const objet of objetsMessier) {
-    const nomFichierAvecExtension = objet.image.split('/').pop(); // Obtenez le nom du fichier avec extension
-    const nomFichierSansExtension = nomFichierAvecExtension.split('-')[0]; // Enlevez l'extension
-    const nomApostropheEchappe = objet.nom.replace('\'', '\\\''); // Échapper les apostrophes
-    document.write(`
-      <div class="element" onclick="afficherImage('${objet.image}', '${nomApostropheEchappe}', '${objet.constellation}', '${objet.saison}', '${objet.difficulté}')">
-      <img src="${objet.image}" alt="${objet.nom}">${nomFichierSansExtension}
-      </div>
-      `);
-  }
-</script>
+      let vignettesSup300px = 0;
+      let totalImages = objetsMessier.length;
 
+      for (const objet of objetsMessier) {
+        const nomFichierAvecExtension = objet.image.split('/').pop();
+        const nomFichierSansExtension = nomFichierAvecExtension.split('-')[0];
+        const nomApostropheEchappe = objet.nom.replace('\'', '\\\'');
 
+        const imgElement = document.createElement('img');
+        imgElement.src = objet.image;
+        imgElement.onload = function() {
+          if (imgElement.width > 300) {
+            vignettesSup300px++;
+          }
+
+          if (--totalImages === 0) {
+            const resultatDiv = document.getElementById('resultat');
+            resultatDiv.textContent = `Nombre de photos : ${vignettesSup300px} sur 110`;
+          }
+        };
+
+        document.write(`
+          <div class="element" onclick="afficherImage('${objet.image}', '${nomApostropheEchappe}', '${objet.constellation}', '${objet.saison}', '${objet.difficulté}')">
+            <img src="${objet.image}" alt="${objet.nom}">${nomFichierSansExtension}
+          </div>
+        `);
+      }
+    </script>
   </div>
 
   <!-- Affichage de l'M en grand -->
   <div id="image-grande" class="image-grande" onclick="cacherImage()">
     <div class="conteneur-image">
-      <img id="image-affichee" src="demarrage.png" alt="M de l'objet Messier">
+      <img id="image-affichee" src="images/demarrage.png" alt="M de l'objet Messier">
       <div id="infos-image" class="infos-image">
         <div id="nom-objet" class="nom-objet"></div>
         <div id="constellation" class="constellation"></div>
