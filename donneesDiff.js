@@ -1,4 +1,4 @@
-const objetsMessier = [
+var donnees = [
   { image: 'images/M11-a.jpg', nom: 'amas du Canard sauvage', constellation: 'Écu de Sobieski', saison : 'été', difficulté : ' Trés Facile ' },
  { image: 'images/M13-a.jpg', nom: 'amas d\'hercule', constellation: 'hercule', saison : 'été', difficulté : ' Trés Facile ' },
  { image: 'images/M22-a.jpg', nom: 'amas globulaire', constellation: 'Sagittaire', saison : 'été', difficulté : ' Trés Facile ' },
