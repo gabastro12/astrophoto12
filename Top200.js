@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("load", function () {
     // Définissez les noms des sections dans un tableau
-    var sectionNames = ["lion", "com", "peLion", "crB", "balance", "corbeau", "coupe", "bouvier", "sextant", "chienChasse", "hydre", "vierge", "amasVierge", "aigle", "fleche", "sagittaire", "scorpion", "lyre", "cygne", "sobieski", "dauphin", "serpent", "ophiuchus", "hercule", "peRenard", "andromede", "lezard", "austral", "verseau", "belier", "sculpteur", "triangle", "capricorne", "pegase", "persee", "baleine", "poissons", "lievre", "lynx", "cocher", "cancer", "taureau", "grandChien", "eridan", "gemeaux", "orion", "licorne", "girafe", "grOurse", "poupe", "cassiopee", "peOurse", "cephee", "dragon"];
+    var sectionNames = ["cancer", "lynx", "hercule", "hydre", "lion", "peLion", "sextant", "com", "chienChasse", "corbeau", "coupe", "crB", "serpent", "vierge", "amasVierge", "grOurse", "balance", "bouvier", "ophiuchus", "scorpion", "aigle", "sobieski", "fleche", "lyre", "sagittaire", "peOurse", "dragon", "capricorne", "cygne", "dauphin", "peRenard", "cephee", "lezard", "pegase", "verseau", "andromede", "baleine", "belier", "poissons", "austral", "sculpteur", "cassiopee", "persee", "triangle", "eridan", "girafe", "lievre", "orion", "taureau", "gemeaux", "grandChien", "licorne", "cocher", "poupe"];
 
+    // Fonction pour compter les images dans une section donnée
     function countImagesInSection(section) {
     var count = 0;
 
@@ -29,6 +30,10 @@ window.addEventListener("load", function () {
     return count;
 }
 
+// Initialiser les totaux
+var totalPosted = 0;
+var totalToPost = 0;
+
 // Utilisez une boucle pour traiter toutes les sections
 for (var i = 0; i < sectionNames.length; i++) {
     var currentSectionName = sectionNames[i];
@@ -37,6 +42,10 @@ for (var i = 0; i < sectionNames.length; i++) {
 
     // Comptez le nombre total d'éléments se terminant par "-a.jpg" dans la section
     var totalSection = document.querySelectorAll('.section[data-section="' + currentSectionName + '"] img[src$="-a.jpg"]').length;
+
+    // Mettez à jour les totaux
+    totalPosted += currentCount;
+    totalToPost += totalSection;
 
     // Affichez les résultats dans le HTML
     var currentResultElement = document.getElementById(currentSectionName + '-result');
@@ -49,6 +58,15 @@ for (var i = 0; i < sectionNames.length; i++) {
     // Affichez les résultats dans la console
     console.log("Nombre - section " + currentSectionName + " : " + currentCount + " sur " + totalSection);
 }
+
+// Affichez le total dans la console
+console.log("Total des images postées : " + totalPosted);
+console.log("Total des images à poster : " + totalToPost);
+
+// Mettez à jour les compteurs dans le HTML
+document.getElementById('total-posted-counter').querySelector('.counter-number').textContent = totalPosted;
+document.getElementById('total-to-post-counter').querySelector('.counter-number').textContent = totalToPost;
+
 
 
 });
