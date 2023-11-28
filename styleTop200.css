@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général de la page */
+body {
+background-color: #D9D9D9;
+font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Wiki{
+  margin : 30px 0 15px 40px;
+}
+
+/* Style pour le conteneur principal */
+        .container {
+            text-align: center;
+        }
+
+        /* Style de base pour le conteneur du compteur */
+        .counter-container {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* Style spécifique pour les chiffres du compteur */
+        .counter-number {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Style spécifique pour l'étiquette du compteur */
+        .counter-label {
+            font-size: 14px;
+        }
+
+
+.nomConst {
+  text-align: center;
+  margin : 10px 0 10px 0;
+}
+
+/* Style pour la table des saisons */
+.seasons-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.seasons-table td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  text-indent: initial;
+}
+
+.spring-cell { background-color: #32CD32; }
+.summer-cell { background-color: #FFED00; }
+.autumn-cell { background-color: #DAA520; }
+.winter-cell { background-color: #87CEFA; }
+
+
+/* Styles pour la table du catalogue */
+.catalog-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.catalog-table td {
+  border: 1px solid #000;
+  /* padding: 10px; */
+  text-align: center;
+  height: 20px;
+}
+
+
+
+/* Utilisez Flexbox pour centrer le texte verticalement */
+[id$="-result"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 12px;
+}
+
+
+
+
+.content {
+  border: 1px solid black;
+  padding: 3px;
+  margin: 1px;
+}
+
+
+
+
+img.a-border {
+  border: 10px solid #e9eac2;
+  
+}
+
+img.b-border {
+  border: 10px solid #c2d1ea;
+}
+
+/* Style pour l'élément .observation qui contient tout le contenu */
+.observation {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 à 4 éléments par ligne */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+/* Style pour chaque élément d'observation */
+.observation-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour les images dans les éléments d'observation */
+.observation-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style pour la liste de description (dl) */
+dl {
+    margin: 0;
+
+
+}
+
+/* Style pour les éléments dt dans la liste de description */
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style pour les éléments dd dans la liste de description */
+dd {
+    margin: 5px 0;
+    font: .75em sans-serif;
+    line-height: .75;
+}
+
+/* Style pour le paragraphe (p) */
+p {
+    margin-top: 10px;
+}
