@@ -80,6 +80,13 @@ font-family: Arial, sans-serif;
   height: 20px;
 }
 
+i {
+  /* Styles pour la balise <i> */
+  font-style: italic;
+  color: black; /* Tu peux changer la couleur selon tes préférences */
+  font-size: .75em;
+}
+
 
 
 /* Utilisez Flexbox pour centrer le texte verticalement */
