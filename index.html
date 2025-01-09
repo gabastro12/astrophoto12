@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transfert vers le nouveau site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .message {
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .countdown {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="lien_vers_votre_logo.png" alt="Logo de notre entreprise">
+    <div class="message">
+      <p>Bonjour ! Je suis le créateur de ce site web. Nous avons mis à jour notre site pour vous offrir une meilleure expérience utilisateur.</p>
+      <p>Si vous souhaitez consulter le code source de l'ancien site, il est toujours disponible sur notre dépôt GitHub :</p>
+    </div>
+
+    <a class="button" href="https://gabastro12.github.io/astrophoto12/" target="_blank">Voir le dépôt GitHub de l'ancien site</a>
+</br></br></br></br>
+    <a class="button" href="https://gabastro12.site/">Accéder au nouveau site</a>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <!-- Redirection automatique vers le nouveau site -->
+  <script>
+    var countdown = 20; // Temps en secondes
+    var countdownDisplay = document.getElementById('countdown');
+
+    function updateCountdown() {
+      countdown--;
+      countdownDisplay.textContent = "Redirection dans " + countdown + " secondes...";
+      if (countdown <= 0) {
+        window.location.href = "https://gabastro12.site/";
+      } else {
+        setTimeout(updateCountdown, 1000);
+      }
+    }
+
+    updateCountdown();
+  </script>
+</body>
+</html>
